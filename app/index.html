@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers.js"></script>
+</head>
+<body>
+
+  <section class="row">
+
+    <aside ng-controller="AssessmentListCtrl" class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list sidenav affix assessments">
+        <li ng-repeat="assessment in assessments">
+          <a href="/assessments/{{ assessment.id }}" class="{{ assessment.id }}"><span>{{ assessment.completion }}% </span>{{ assessment.name }}</a>
+        </li>
+      </ul>
+    </aside>
+
+  </section>
+
+</body>
+</html>
