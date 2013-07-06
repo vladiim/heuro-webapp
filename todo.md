@@ -1,0 +1,1 @@
+* Look at [ui-router](https://github.com/angular-ui/ui-router) for nested views

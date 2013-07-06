@@ -1,36 +1,20 @@
 'use strict';
 
-/* Controllers */
-'use strict';
+/* AssessmentListCtrl */
 
-/* Controllers */
+var AssessmentListCtrl = ['$scope', '$http', function($scope, $http) {
+	$http.get('data/assessments.json').success(function(data) {
+		$scope.assessments = data;
+	});
+}];
 
-function AssessmentListCtrl($scope) {
-	$scope.assessments = [
-	  {
-	  	"completion": 0,
-	  	"id": "insights",
-	  	"name": "insights"
-	  },
-	  {
-	  	"completion": 0,
-	  	"id": "web",
-	  	"name": "web"
-	  },
-	  {
-	  	"completion": 0,
-	  	"id": "acquisition",
-	  	"name": "acquisition"
-	  },
-	  {
-	  	"completion": 0,
-	  	"id": "retention",
-	  	"name": "retention"
-	  },
-	  {
-	  	"completion": 0,
-	  	"id": "loyalty",
-	  	"name": "loyalty"
-	  }
-	]
-}
+/* AssessmentShowCtrl */
+
+var AssessmentShowCtrl = ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+  $scope.assessmentId = $routeParams.assessmentId;
+
+  $http.get('/data/' + $routeParams.assessmentId + '.json').
+    success(function(data) {
+      $scope.assessment = data;
+    });
+}];

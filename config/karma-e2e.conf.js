@@ -8,14 +8,11 @@ files = [
 
 autoWatch = true;
 
-// browsers = ['Chrome'];
-
-// singleRun = true;
-
 proxies = {
-  // '/': 'http://localhost:8000/' // Node
   '/': 'http://localhost:4567/' // Sinatra
 };
+
+// urlRoot = '/_karma_/'
 
 junitReporter = {
   outputFile: 'test_out/e2e.xml',

@@ -1,11 +1,8 @@
 'use strict';
 
-/* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
-
 describe('AssessmentListCtrl', function() {
   beforeEach(function() {
-    // browser().navigateTo('../../app/index.html')
-    browser().navigateTo('/index.html');
+    browser().navigateTo('/');
   });
 
   describe('click insights sub-nav', function() {
@@ -13,8 +10,24 @@ describe('AssessmentListCtrl', function() {
 	    element('a.insights').click();
 	  });
 
+    // it('adds the active class to insights', function() {
+      // expect(element('a.insights.active')).toBe();
+      // expect(element('a.web.active')).not().toBe();
+    // });
+
+  });
+
+  describe('visit assessments/insights', function() {
+    beforeEach(function() {
+      browser().navigateTo('/assessments/insights');
+    });
+
     it('loads the insights assessment', function() {
-      expect(element('.assessment h1').text()).toBe('Insights Assessment');
+      expect(binding('assessment.name')).toBe('Insights Assessment');
+    });
+
+    it('loads the assessments/insights url', function() {
+      expect(browser().window().path()).toBe('/assessments/insights');
     });
   });
 });
