@@ -11,3 +11,9 @@ heuro.config(['$routeProvider', function($routeProvider) {
   	  controller: AssessmentShowCtrl}).
     otherwise({ redirectTo: '/' });
 }]);
+
+/* Remove hashbang url mode */
+
+heuro.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.html5Mode(true);
+}]);

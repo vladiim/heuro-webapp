@@ -23,7 +23,8 @@ describe('AssessmentListCtrl', function() {
     });
 
     it('loads the insights assessment', function() {
-      expect(binding('assessment.name')).toBe('Insights Assessment');
+      // expect(binding('assessment.name')).toBe('Insights Assessment');
+      expect(binding('assessmentId')).toBe('insights');
     });
 
     it('loads the assessments/insights url', function() {
