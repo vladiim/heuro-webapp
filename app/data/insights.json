@@ -1,14 +1,16 @@
 {
 	"name": "insights",
-	"questions": {
-		"category 1": [
-		  {
+	"categories": {
+		"name": "category 1",
+		"topics": {
+			"name": "topic 1",
+			"rankings": {
 		  	"0": "Don't know",
 		  	"1": "Bad nav",
 		  	"2": "Something else",
 		  	"3": "A different answer",
-		  	"4": "Lolz. Smart"
-		  }
-		]
+		  	"4": "Lolz. Smart"					
+			}
+		}
 	}
 }

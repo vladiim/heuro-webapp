@@ -1,5 +1,11 @@
 <section>
 	<header>
-		<h1 class='assessment-name'>{{ assessment.name }}</h1>
+		<h1 class='assessment-name'>{{ assessment.name | capitalise }}</h1>
 	</header>
+
+  <article ng-repeat="category in assessment.categories" class="categories">
+  	<div>
+  		<p id='category-name'>{{ category.name | capitalise }}</p>
+  	</div>
+  </article>
 </section>

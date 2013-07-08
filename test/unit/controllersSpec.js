@@ -3,11 +3,11 @@
 describe('AssessmentListCtrl', function() {
   var scope, ctrl, $httpBackend;
 
-  var phoneData = [{ "completion": 0, "id": "insights", "name": "insights" }];
+  var assessmentData = [{ "completion": 0, "id": "insights", "name": "insights" }];
 
   beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/data/assessments.json').respond(phoneData);
+    $httpBackend.expectGET('/data/assessments.json').respond(assessmentData);
 
     scope = $rootScope.$new();
     ctrl  = $controller(AssessmentListCtrl, { $scope: scope });
@@ -17,6 +17,6 @@ describe('AssessmentListCtrl', function() {
     expect(scope.assessments).toBeUndefined();
     $httpBackend.flush();
 
-    expect(scope.assessments).toEqual(phoneData);
+    expect(scope.assessments).toEqual(assessmentData);
   });
 });

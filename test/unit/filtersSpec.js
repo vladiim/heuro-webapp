@@ -1,7 +1,13 @@
 'use strict';
 
-/* jasmine specs for filters go here */
+describe('heuroFilters', function() {
+  beforeEach(module('heuroFilters'));
 
-describe('filter', function() {
-
+  describe('capitalise', function() {
+  	it('converts the first charecter of every sentence to a capital',
+  		  inject(function(capitaliseFilter) {
+      expect(capitaliseFilter('blah')).toBe('Blah');
+      expect(capitaliseFilter('blah lolz')).toBe('Blah Lolz');
+  	}));
+  });
 });
