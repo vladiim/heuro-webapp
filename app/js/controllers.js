@@ -3,7 +3,7 @@
 /* AssessmentListCtrl */
 
 var AssessmentListCtrl = ['$scope', '$http', function($scope, $http) {
-	$http.get('data/assessments.json').success(function(data) {
+	$http.get('/data/assessments.json').success(function(data) {
 		$scope.assessments = data;
 	});
 }];

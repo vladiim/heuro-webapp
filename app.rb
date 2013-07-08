@@ -13,6 +13,6 @@ set :public_folder, Proc.new { File.join(root, "app") }
 # View template directory
 set :views, Proc.new { File.join(root, "app") }
 
-get '/' do
+get '/*' do
   File.read "#{Dir.pwd}/app/index.html"
 end

@@ -7,7 +7,7 @@ var heuro = angular.module('heuro', []);
 heuro.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/assessments/:assessmentId', {
-  	  templateUrl: '/partials/assessments/show.html',
+  	  templateUrl: '/templates/partials/assessments/show.html',
   	  controller: AssessmentShowCtrl}).
     otherwise({ redirectTo: '/' });
 }]);
