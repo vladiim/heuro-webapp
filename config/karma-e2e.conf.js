@@ -9,7 +9,8 @@ files = [
 autoWatch = true;
 
 proxies = {
-  '/': 'http://localhost:4567/' // Sinatra
+  // '/': 'http://localhost:4567/' // Sinatra
+  '/': 'http://localhost:9393' // Sinatra via shotgun
 };
 
 // urlRoot = '/_karma_/'

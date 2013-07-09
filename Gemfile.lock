@@ -24,6 +24,8 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.9)
+    shotgun (0.9)
+      rack (>= 1.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -40,5 +42,6 @@ PLATFORMS
 DEPENDENCIES
   heroku (~> 2.39.3)
   json (~> 1.7.7)
+  shotgun (~> 0.9)
   sinatra (~> 1.4.2)
   thin (~> 1.5.1)

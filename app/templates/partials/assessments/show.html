@@ -1,11 +1,21 @@
-<section>
+<section class='span8'>
 	<header>
 		<h1 class='assessment-name'>{{ assessment.name | capitalise }}</h1>
 	</header>
 
-  <article ng-repeat="category in assessment.categories" class="categories">
+  <article ng-model="mainCategory" class="categories">
   	<div>
-  		<p id='category-name'>{{ category.name | capitalise }}</p>
+  		<header>
+  			<h3>{{ mainCategory.name | capitalise }}/ {{ mainTopic.name | capitalise }} </h3>
+  		</header>
+  		<!-- <p id='category-name'>{{ mainCategory.name | capitalise }}</p> -->
+
+  		<ul>
+  			<li>{{ mainTopic.ranking[0] }}</li>
+  			<li>{{ mainTopic.ranking[1] }}</li>
+  			<li>{{ mainTopic.ranking[2] }}</li>
+  			<li>{{ mainTopic.ranking[3] }}</li>
+  		</ul>
   	</div>
   </article>
 </section>

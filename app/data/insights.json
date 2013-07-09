@@ -1,16 +1,20 @@
 {
 	"name": "insights",
-	"categories": {
-		"name": "category 1",
-		"topics": {
-			"name": "topic 1",
-			"rankings": {
-		  	"0": "Don't know",
-		  	"1": "Bad nav",
-		  	"2": "Something else",
-		  	"3": "A different answer",
-		  	"4": "Lolz. Smart"					
-			}
+	"categories": [
+		{
+			"name": "category 1",
+			"topics": [
+        {
+					"name": "topic 1",
+					"ranking": {
+						"0": "Don't know",
+						"1": "Bad nav",
+						"2": "Something else",
+						"3": "A different answer",
+						"4": "Lolz. Smart"					
+					}
+        }
+			]
 		}
-	}
+	]
 }

@@ -15,6 +15,8 @@ var AssessmentShowCtrl = ['$scope', '$routeParams', '$http', function($scope, $r
 
   $http.get('/data/' + $routeParams.assessmentId + '.json').
     success(function(data) {
-      $scope.assessment = data;
+      $scope.assessment   = data;
+      $scope.mainCategory = $scope.assessment.categories[0];
+      $scope.mainTopic    = $scope.mainCategory.topics[0];
     });
 }];
