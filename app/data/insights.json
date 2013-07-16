@@ -13,8 +13,31 @@
 						"3": "A different answer",
 						"4": "Lolz. Smart"					
 					}
+        }, {
+					"name": "new topic 2",
+					"ranking": {
+						"0": "Blah blah",
+						"1": "Another question",
+						"2": "The lolz",
+						"3": "Something else",
+						"4": "The end of topic 2"					
+					}
         }
 			]
+		}, {
+			"name": "new cat 2",
+			"topics": [
+        {
+					"name": "topic 1",
+					"ranking": {
+						"0": "Don't know",
+						"1": "Bad nav",
+						"2": "Something else",
+						"3": "A different answer",
+						"4": "Lolz. Smart"					
+					}
+        }
+      ]
 		}
 	]
 }

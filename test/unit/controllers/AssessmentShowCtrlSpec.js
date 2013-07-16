@@ -3,26 +3,10 @@
 describe('AssessmentShowCtrl', function() {
   var $httpBackend, $rootScope, createController;
 
-  var mainTopicData = {
-    "name": "topic 1",
-    "ranking": {
-      "0": "Don't know",
-      "1": "Bad nav",
-      "2": "Something else",
-      "3": "A different answer",
-      "4": "Lolz. Smart"
-    }
-  }
-
-  var mainCategoryData = {
-    "name": "category 1",
-    "topics": [ mainTopicData ]
-  }
-
-  var assessmentData = {
-    "name": "insights",
-    "categories": [ mainCategoryData ]
-  }
+  var mainTopicData    = { "name": "topic 1", "ranking": { "0": "Don't know" } };
+  var nextTopicData    = { "name": "next topic 2", "ranking": { "0": "Don't know" } };
+  var mainCategoryData = { "name": "category 1", "topics": [ mainTopicData, nextTopicData ] };
+  var assessmentData   = { "name": "insights", "categories": [ mainCategoryData ] };
 
   beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
@@ -72,5 +56,52 @@ describe('AssessmentShowCtrl', function() {
     createController();
     $httpBackend.flush();
     expect($rootScope.mainTopic).toEqual(mainTopicData)
+  });
+
+  it('sets up the category and topic meta details', function() {
+    createController();
+    $httpBackend.flush();
+    expect($rootScope.categoryTotal).toEqual(1);
+    expect($rootScope.categoryN).toEqual(1);
+    expect($rootScope.topicsTotal).toEqual(2);
+    expect($rootScope.topicN).toEqual(1);
+  });
+
+  describe('topicRanked()', function() {
+    var newAssessmentData, catTwoTopicOne, secondCategoryData;
+
+    beforeEach(function() {
+      catTwoTopicOne     = {};
+      secondCategoryData = { "name": "category 2", "topics": [ catTwoTopicOne, mainTopicData, nextTopicData ] };
+      newAssessmentData  = { "name": "insights", "categories": [ mainCategoryData, secondCategoryData ] };
+      createController();
+      $httpBackend.flush();
+      $rootScope.assessment = newAssessmentData;
+      $rootScope.topicN = 2;
+      $rootScope.topicRanked(2);
+    });
+
+    it('sets the topic score', function() {
+      expect($rootScope.topicScore).toEqual(2);
+    });
+
+    it('changes to the next category', function() {
+      expect($rootScope.mainCategory).toEqual(secondCategoryData);
+    });
+
+    it('moves the main topic', function() {
+      expect($rootScope.mainTopic).toEqual(catTwoTopicOne);
+    });
+
+    describe('call the function again', function() {
+      beforeEach(function() {
+        $rootScope.topicRanked(3);
+        $rootScope.topicRanked(3);
+      });
+
+      it('sets the mainTopic to the next category topic', function() {
+        expect($rootScope.mainTopic).toEqual(nextTopicData);
+      });
+    });
   });
 });

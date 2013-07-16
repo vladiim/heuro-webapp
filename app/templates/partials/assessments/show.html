@@ -6,15 +6,15 @@
   <article ng-model="mainCategory" class="categories">
   	<div>
   		<header>
-  			<h3>{{ mainCategory.name | capitalise }}/ {{ mainTopic.name | capitalise }} </h3>
+  			<h3><span class='category-name'>{{ mainCategory.name | capitalise }}</span>/ <span class='topic-name'>{{ mainTopic.name | capitalise }}</span></h3>
   		</header>
   		<!-- <p id='category-name'>{{ mainCategory.name | capitalise }}</p> -->
 
-  		<ul>
-  			<li>{{ mainTopic.ranking[0] }}</li>
-  			<li>{{ mainTopic.ranking[1] }}</li>
-  			<li>{{ mainTopic.ranking[2] }}</li>
-  			<li>{{ mainTopic.ranking[3] }}</li>
+  		<ul class='rankings'>
+  			<li ng-click="topicRanked(0)">0 {{ mainTopic.ranking['0'] }}</li>
+  			<li ng-click="topicRanked(1)">1 {{ mainTopic.ranking['1'] }}</li>
+  			<li  ng-click="topicRanked(2)">2 {{ mainTopic.ranking['2'] }}</li>
+  			<li  ng-click="topicRanked(3)">3 {{ mainTopic.ranking['3'] }}</li>
   		</ul>
   	</div>
   </article>
