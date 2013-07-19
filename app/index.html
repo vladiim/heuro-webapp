@@ -29,14 +29,7 @@
   <![endif]-->
 
   <section class="row">
-
-    <aside ng-controller="AssessmentListCtrl" class="span3">
-      <ul class="nav nav-list sidenav affix assessments">
-        <li ng-repeat="assessment in assessments">
-          <a href="/assessments/{{ assessment.id }}" class="{{ assessment.id }}"><span>{{ assessment.completion }}% </span>{{ assessment.name }}</a>
-        </li>
-      </ul>
-    </aside>
+    <aside class="span3" ng-include src="'templates/partials/assessments/side_nav.html'"></aside>
 
     <div ng-view id="ng-view"></div>
   </section>
