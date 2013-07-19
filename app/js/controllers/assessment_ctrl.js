@@ -36,11 +36,11 @@ var AssessmentShowCtrl = ['$scope', '$routeParams', '$http', function($scope, $r
       $scope.mainTopic    = $scope.mainCategory.topics[0];
       $scope.topicsTotal  = $scope.arrayLength($scope.mainCategory.topics);
       $scope.topicN       = 1;
+
     } else {
       $scope.topicN++;
       $scope.mainTopic = $scope.mainCategory.topics[$scope.topicN - 1];
     }
-
   };
 
   $scope.arrayLength = function(array) {
